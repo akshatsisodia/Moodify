@@ -1,11 +1,10 @@
-import FaceExpressionTracker from "./features/Expression/components/FaceExpressionTracker"
+import FaceExpressionTracker from "./features/Expression/components/FaceExpressionTracker";
+import {router} from "./app.routes";
+import { RouterProvider } from "react-router";
 
 const App = () => {
   return (
-    <main>
-      <h1>Face Expression Tracker</h1>
-      <FaceExpressionTracker />
-    </main>
+    <RouterProvider router={router}></RouterProvider>
   )
 }
 
