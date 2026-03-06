@@ -10,7 +10,7 @@ authRouter.post("/register",authController.userRegisterController);
 authRouter.post("/login",authController.userLoginController);
 
 // Logout User Api- /api/auth/logout (protected route)
-authRouter.post("/logout",authController.userLogoutController);
+authRouter.post("/logout",identifyUser,authController.userLogoutController);
 
 // Get User Data Api- /api/auth/get-me (protected route)
 authRouter.get("/get-me",identifyUser,authController.getMeUserController);
