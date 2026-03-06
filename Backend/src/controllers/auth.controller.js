@@ -36,11 +36,8 @@ const userRegisterController = async (req, res)=>{
         username:user.username
     }, process.env.JWT_SECRET,{expiresIn:"3d"});
 
-
-
     res.cookie("token",token);
     
-
     res.status(200).json({
         message:"User Registered Successfully.",
         user
@@ -49,9 +46,14 @@ const userRegisterController = async (req, res)=>{
 }
 
 const userLoginController = async (req, res) =>{
-    const {email, password} = req.body;
+    const {username, email, password} = req.body;
 
-    const user = await userModel.findOne({email});
+    const user = await userModel.findOne({
+        $or:[
+            {username},
+            {email}
+        ]
+    }).select("+password");
 
     if(!user){
         return res.status(401).json({

@@ -1,12 +1,14 @@
-import FaceExpressionTracker from "./features/Expression/components/FaceExpressionTracker";
-import {router} from "./app.routes";
+import { router } from "./app.routes";
 import { RouterProvider } from "react-router";
 import "./features/shared/styles/global.scss";
+import { AuthProvider } from "./features/auth/authContext";
 
 const App = () => {
   return (
-    <RouterProvider router={router}/>
-  )
-}
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;
