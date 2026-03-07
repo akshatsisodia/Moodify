@@ -1,8 +1,10 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
-const Protected = ({ children }) => {
+const Protected = () => {
   const { user, loading } = useAuth();
+  
+  console.log("Protected user:", user);
 
   if (loading) {
     return <main>Loading...</main>;
@@ -13,7 +15,7 @@ const Protected = ({ children }) => {
   }
 
 
-  return children;
+  return <Outlet/>;
 };
 
 export default Protected;

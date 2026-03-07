@@ -17,7 +17,7 @@ const userRegisterController = async (req, res)=>{
                 email
             }
         ]
-    })
+    }).select("-password")
 
     if(isUserExist){
         return res.status(409).json({

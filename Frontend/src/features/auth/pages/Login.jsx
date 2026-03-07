@@ -5,21 +5,17 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Login = () => {
-  const { handleLogin, loading, user } = useAuth();
+  const { handleLogin, loading } = useAuth();
   const navigate = useNavigate();
-
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(()=>{
-    if(user){
-      navigate("/");
-    }
-  },[user])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await handleLogin({ email, password });
+    navigate("/")
   };
 
   if (loading) {

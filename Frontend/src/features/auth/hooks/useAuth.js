@@ -21,19 +21,7 @@ const useAuth = () => {
     try {
       setLoading(true);
       const data = await loginUser({ username, email, password });
-      setUser(data.user);
-    } catch (err) {
-      return err;
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleGetMe = async () => {
-    try {
-      setLoading(true);
-      const data = await getMeUser();
-      setUser(data.user);
+      setUser(data);
     } catch (err) {
       return err;
     } finally {
@@ -53,18 +41,13 @@ const useAuth = () => {
     }
   };
 
-  useEffect(() => {
-    handleGetMe();
-  }, []);
-
   return {
     user,
     loading,
     handleRegister,
     handleLogin,
-    handleGetMe,
     handleLogout,
   };
 };
 
-export default useAuth;
+export default useAuth; 
