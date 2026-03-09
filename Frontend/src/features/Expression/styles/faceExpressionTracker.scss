@@ -1,0 +1,28 @@
+.camera-container {
+  width: 500px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgb(213, 198, 198);
+  padding: 0.2rem;
+}
+
+.video-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.expression-box {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 0.5rem 0.75rem;
+  background: rgb(156, 101, 101);
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+}

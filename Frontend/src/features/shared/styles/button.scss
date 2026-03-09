@@ -1,16 +1,21 @@
-.button{
-    background-color: #0f105d; /* Green */
-    border: none;
-    color: white;
-    padding-inline: 1rem;
-    padding-block: 0.5rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    outline: none;
-    font-size: 16px;
+.button {
+  background-color: #0f105d; /* Green */
+  border: none;
+  color: white;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  font-size: 16px;
 
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 
-    cursor: pointer;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.button:active {
+  scale: 0.96;
 }

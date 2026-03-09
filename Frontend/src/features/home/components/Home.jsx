@@ -1,5 +1,7 @@
+import FaceExpressionTracker from "../../Expression/components/FaceExpressionTracker";
+
 const Home = () => {
-  return <main>Home</main>;
+  return <main><FaceExpressionTracker/></main>;
 };
 
 export default Home;
