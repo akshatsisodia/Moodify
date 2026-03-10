@@ -17,7 +17,7 @@ export const createFaceLandmarker = async ({ runningMode, videoRef }) => {
   return faceLandmarker;
 };
 
-const startCamera = async ({ videoRef }) => {
+export const startCamera = async ({ videoRef }) => {
   const stream = await navigator.mediaDevices.getUserMedia({
     video: {
       width: { ideal: 1280 },
